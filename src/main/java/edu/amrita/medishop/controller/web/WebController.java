@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.amrita.medishop.service.UserService;
 
 @Controller
-public class UserWebController {
+public class WebController {
 
 	@Autowired
 	public UserService userService;

@@ -21,9 +21,13 @@ public class ProductApiController {
 		return productService.getAllProducts();
 	}
 	
-	@RequestMapping("/api/products/product/{id}")
+	@RequestMapping("/api/products/product/id/{id}")
 	public Product getProductById(@PathVariable int id) {
 		return productService.getProductById(id);
 	}
 	
+	@RequestMapping("/api/products/product/name/{name}")
+	public List<Product> getProductByName(@PathVariable String name) {
+		return productService.getProductByName(name);
+	}
 }

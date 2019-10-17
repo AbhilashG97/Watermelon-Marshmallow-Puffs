@@ -37,7 +37,7 @@ public class ProductService {
 	 * @param name: The name of the product that is required
 	 * @return: Product object with the specified name
 	 */
-	public Product getProductByName(String name) {
-		return productRepository.findProductByName(name);
+	public List<Product> getProductByName(String name) {
+		return productRepository.findByNameContaining(name);
 	}
 }
