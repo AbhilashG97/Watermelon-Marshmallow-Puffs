@@ -6,4 +6,6 @@ import edu.amrita.medishop.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
+	Product findProductByName(String name);
+	
 }
