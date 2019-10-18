@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import edu.amrita.medishop.userdetails.UserDetailsServiceImpl;
+import edu.amrita.medishop.utility.PasswordEncoderTest;
 
 @EnableWebSecurity
 
@@ -27,10 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {
-        DelegatingPasswordEncoder delPasswordEncoder = (DelegatingPasswordEncoder) PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
-        delPasswordEncoder.setDefaultPasswordEncoderForMatches(bcryptPasswordEncoder);
-        return delPasswordEncoder;      
+    	return new PasswordEncoderTest();
     }
     
     @Bean
@@ -46,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/**").permitAll().anyRequest().authenticated()
 			.and()
-			.formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
+			.formLogin().loginPage("/login").usernameParameter("email").passwordParameter("password").permitAll()
             .loginProcessingUrl("/doLogin")
             .successForwardUrl("/postLogin")
             .failureUrl("/loginFailed")
