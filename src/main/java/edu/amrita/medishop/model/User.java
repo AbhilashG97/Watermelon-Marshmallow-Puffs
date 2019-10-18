@@ -8,34 +8,34 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="users")
+@Entity(name = "users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	private String name;
-	
+
 	private String password;
-	
-	@Column(name="phone_number")
-	private String phoneNumeber;
-	
+
+	@Column(name = "phone_number")
+	private String phoneNumber;
+
 	private String email;
-	
+
 	private Date dob;
 
 	public User() {
 		super();
 	}
 
-	public User(int id, String name, String password, String phoneNumeber, String email, Date dob) {
+	public User(int id, String name, String password, String phoneNumber, String email, Date dob) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.password = password;
-		this.phoneNumeber = phoneNumeber;
+		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.dob = dob;
 	}
@@ -64,12 +64,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getPhoneNumeber() {
-		return phoneNumeber;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhoneNumeber(String phoneNumeber) {
-		this.phoneNumeber = phoneNumeber;
+	public void setPhoneNumber(String phoneNumeber) {
+		this.phoneNumber = phoneNumeber;
 	}
 
 	public String getEmail() {
@@ -90,7 +90,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", password=" + password + ", phoneNumeber=" + phoneNumeber
+		return "User [id=" + id + ", name=" + name + ", password=" + password + ", phoneNumeber=" + phoneNumber
 				+ ", email=" + email + ", dob=" + dob + "]";
 	}
 }

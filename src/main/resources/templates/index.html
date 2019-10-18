@@ -2,468 +2,519 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>MediShop</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>MediShop</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">MediShop</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="home.html">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Pharmaceuticals</a></li>
-                        <li><a href="med_devices.html">Medical Devices</a></li>
-                        <li><a href="general.html">General</a></li>
-                    </ul>
-                </li>
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-fw fa-envelope"></i>Contact Us<span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <div class="dropdown-content">
-                          <li><a>Customer-Support:7894514789</a></li>
-                          <li><a href = "mailto:medishopindia@gmail.com">mail-to:medishop@gmail.com</a></li>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" th:href="@{/home}">MediShop</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a th:href="@{/home}">Home</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" th:href="@{/home}">Categories<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a th:href="@{/home}">Pharmaceuticals</a></li>
+						<li><a th:href="@{/home}">Medical Devices</a></li>
+						<li><a th:href="@{/home}">General</a></li>
+					</ul></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#"><i class="fa fa-fw fa-envelope"></i>Contact
+						Us<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<div class="dropdown-content">
+							<li><a>Customer-Support:7894514789</a></li>
+							<li><a href="mailto:medishopindia@gmail.com">mail-to:medishop@gmail.com</a></li>
+						</div>
+					</ul></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-search"></span>
+						Search</a></li>
+				<li><a th:href="@{/signup}"><span
+						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a th:href="@{/login}"><span
+						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		</div>
+	</nav>
 
-               
-                         </div>
-                
-           
-                     </ul>
-                 </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                <li><a th:href="@{/signup}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a th:href="@{/login}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">20%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star disable"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Dolo 650 MG</a>
+						</h3>
+						<div class="price">
+							$16.00 <span>$20.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Pantaprazole</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Gemcal Plus</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Evion</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">20%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Dolo 650 MG</a></h3>
-                        <div class="price">$16.00
-                            <span>$20.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Pantaprazole</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Gemcal Plus</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Evion</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- 2nd Row of products -->
+		<br>
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">20%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star disable"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Azarid</a>
+						</h3>
+						<div class="price">
+							$16.00 <span>$20.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Omega 3</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Sugadip G2</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Shellcal</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 3rd Row of Products -->
+		<br>
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">20%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star disable"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Tryptomer 20 MG</a>
+						</h3>
+						<div class="price">
+							$16.00 <span>$20.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Nexium</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Lantus Solostar</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#"> <img class="pic-1"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+							<img class="pic-2"
+							src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
+						</a>
+						<ul class="social">
+							<li><a href="" data-tip="Quick View"><i
+									class="fa fa-search"></i></a></li>
+							<li><a href="" data-tip="Add to Wishlist"><i
+									class="fa fa-shopping-bag"></i></a></li>
+							<li><a href="" data-tip="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+						<span class="product-new-label">Sale</span> <span
+							class="product-discount-label">50%</span>
+					</div>
+					<ul class="rating">
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+						<li class="fa fa-star"></li>
+					</ul>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="#">Crestor</a>
+						</h3>
+						<div class="price">
+							$5.00 <span>$10.00</span>
+						</div>
+						<a class="add-to-cart" href="">+ Add To Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- 2nd Row of products -->
-        <br>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">20%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Azarid</a></h3>
-                        <div class="price">$16.00
-                            <span>$20.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Omega 3</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Sugadip G2</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Shellcal</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 3rd Row of Products -->
-        <br>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">20%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Tryptomer 20 MG</a></h3>
-                        <div class="price">$16.00
-                            <span>$20.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Nexium</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Lantus Solostar</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                            <img class="pic-2"
-                                src="https://image.masslive.com/home/mass-media/width600/img/opinion_impact/photo/life-health-opioid-addiction-myo-fa1299a903fda4b9.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">Sale</span>
-                        <span class="product-discount-label">50%</span>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">Crestor</a></h3>
-                        <div class="price">$5.00
-                            <span>$10.00</span>
-                        </div>
-                        <a class="add-to-cart" href="">+ Add To Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+	</div>
 
 </body>
 
