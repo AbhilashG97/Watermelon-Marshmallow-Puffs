@@ -17,6 +17,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 
 import edu.amrita.medishop.model.User;
+import edu.amrita.medishop.service.ProductService;
 import edu.amrita.medishop.service.UserService;
 import edu.amrita.medishop.userdetails.PdfUserDetails;
 
@@ -26,14 +27,19 @@ public class WebController {
 
 	@Autowired
 	public UserService userService;
+	
+	@Autowired
+	public ProductService productService;
 
 	@RequestMapping("/")
-	public String showIndexPage() {
+	public String showIndexPage(Model model) {
+		model.addAttribute("products", productService.getAllProducts());
 		return "index";
 	}
 
 	@RequestMapping("/home")
-	public String showHomePage() {
+	public String showHomePage(Model model) {
+		model.addAttribute("products", productService.getAllProducts());
 		return "index";
 	}
 
@@ -87,6 +93,6 @@ public class WebController {
 			return "redirect:/home";
 		}
 
-		return "redirect:/home";
+		return "redirect:/login";
 	}
 }

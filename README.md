@@ -16,13 +16,9 @@ Please make sure that the following is installed before building this project -
 1.  [MySql](https://dev.mysql.com/downloads/mysql/) and [MySql Workbench](https://dev.mysql.com/downloads/workbench/)
 1.  Git
 
-### To build the project please follow the below mentioned steps - 
+### To build the project please follow these steps - 
 
 1.  Create a schema(database) in MySql Workbench. Name of the **schema** should be **```medishop```**.
 
 1.  Set the password of your database in ```application.properties``` file.
 1.  Run the project, if everything works properly, you should now see two tables being created in your MySql Workbench. 
-
-## :exclamation: Help needed :exclamation: 
-
-Please add more data to the database.
